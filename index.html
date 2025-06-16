@@ -1,4 +1,4 @@
-kind<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -133,13 +133,14 @@ kind<!DOCTYPE html>
   <h3>
     <!--Tab to edit-->Ephesians 4:1-6
   </h3>
-    <audio id="myAudio">
-  <source src="trimephesians4_1-6" type="audio/mpeg">
-</audio>
-
-<button onclick="playAudio()">Play</button>
-<button onclick="pauseAudio()">Pause</button>
-
+<audio id="player" src="trimephesians4_1-6"></audio>
+<div>
+  <button onclick="document.getElementById('player').play()">Play</button>
+  <button onclick="document.getElementById('player').pause()">Pause</button>
+  <input type="range" id="volume" min="0" max="1" step="0.1" value="1"
+         onchange="document.getElementById('player').volume = this.value">
+  <label for="volume">Volume</label>
+</div>
 <p>
   <!--Tab to edit-->Dont make our lives difficult, work with us, dont stone us and call us stupid, you aint leading no one except your cat and the dog. Be careful here. The Lord will give you stubborn and revelious ones. With tender humility., quiet patience. Always demonstrate gentleness, . 
 </p>
