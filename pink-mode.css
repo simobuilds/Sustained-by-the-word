@@ -1,28 +1,115 @@
-body {
-    background-color: #ffe0f2; /* Pink background */
-    color: #6a1b9a; /* Dark purple/pink text */
-}
 
-.content-box {
-    border-color: #ffb3e6;
-}
+        /* Italian-Inspired Pink Mode */
+        body.pink-mode {
+            background-color: #fff5f9;
+            color: #5a2a4a;
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.8;
+        }
 
-h1 {
-    color: #c2185b;
-}
+        /* Alternating Section Backgrounds */
+        .section {
+            padding: 80px 0;
+            position: relative;
+        }
 
-p {
-    color: #880e4f;
-}
+        .section:nth-child(odd) {
+            background-color: #fff5f9;
+        }
 
-.theme-button {
-    background-color: #ffcdd2;
-    color: #c2185b;
-    border-color: #f48fb1;
-}
+        .section:nth-child(even) {
+            background-color: #fff;
+            border-top: 1px solid #ffd6e7;
+            border-bottom: 1px solid #ffd6e7;
+        }
 
-.theme-button:hover {
-    background-color: #f8bbd0;
-}
+        /* Italian Flourish Separators */
+        .section::before {
+            content: "❀❀❀";
+            display: block;
+            text-align: center;
+            color: #e8a1b8;
+            font-size: 24px;
+            margin-bottom: 40px;
+            letter-spacing: 10px;
+        }
 
+        /* Typography */
+        h1 {
+            font-family: 'Playfair Display', serif;
+            color: #b34d6e;
+            font-size: 3.2rem;
+            font-weight: 700;
+            font-style: italic;
+            text-align: center;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 3px rgba(179, 77, 110, 0.2);
+        }
+
+        h2 {
+            font-family: 'Parisienne', cursive;
+            color: #c76b8a;
+            font-size: 2.8rem;
+            text-align: center;
+            margin: 40px 0 20px;
+        }
+
+        h3 {
+            font-family: 'Petit Formal Script', cursive;
+            color: #d48aa5;
+            font-size: 2rem;
+            margin: 30px 0 15px;
+        }
+
+        /* Content Cards */
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin: 20px auto;
+            max-width: 800px;
+            box-shadow: 0 5px 15px rgba(232, 161, 184, 0.15);
+            border: 1px solid #ffe5ee;
+        }
+
+        /* Buttons */
+        .theme-button {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #ffb6c1;
+            color: #7a3b5a;
+            border: none;
+            border-radius: 30px;
+            padding: 12px 28px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 10px rgba(255, 182, 193, 0.4);
+        }
+
+        .theme-button:hover {
+            background-color: #ff9eb5;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 158, 181, 0.5);
+        }
+
+        /* Decorative Elements */
+        .ornament {
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 10"><path d="M0,5 Q25,10 50,5 T100,5" fill="none" stroke="%23e8a1b8" stroke-width="0.5"/></svg>');
+            background-repeat: repeat-x;
+            height: 20px;
+            margin: 40px 0;
+            opacity: 0.6;
+        }
+
+        /* Audio Player Styling */
+        .audio-player {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 30px auto;
+            max-width: 500px;
+            box-shadow: 0 5px 20px rgba(232, 161, 184, 0.2);
+            }
 /* Add more pink mode specific overrides here */
