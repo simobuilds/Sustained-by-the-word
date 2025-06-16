@@ -12,9 +12,10 @@ h1 {
 }
 
 .theme-button {
-    background-color: #333;
-    color: #f0f0f0;
+
     border-color: #555;
+        background-color: steelblue ;
+    button-text: #000000;
 }
 
 .theme-button:hover {
