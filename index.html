@@ -133,6 +133,13 @@
   <h3>
     <!--Tab to edit-->Ephesians 4:1-6
   </h3>
+    <audio id="myAudio">
+  <source src="notification.m4a " type="audio/mpeg">
+</audio>
+
+<button onclick="playAudio()">Play</button>
+<button onclick="pauseAudio()">Pause</button>
+
 <p>
   <!--Tab to edit-->Dont make our lives difficult, work with us, dont stone us and call us stupid, you aint leading no one except your cat and the dog. Be careful here. The Lord will give you stubborn and revelious ones. With tender humility., quiet patience. Always demonstrate gentleness, . 
 </p>
@@ -294,5 +301,16 @@ https://bible.com/bible/111/mal.3.10.NIV
         });
     </script>
 
+<script>
+  const audio = document.getElementById("myAudio");
+  
+  function playAudio() {
+    audio.play();
+  }
+  
+  function pauseAudio() {
+    audio.pause();
+  }
+</script>
 </body>
 </html>
