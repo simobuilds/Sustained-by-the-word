@@ -1,0 +1,28 @@
+body {
+    background-color: #ffe0f2; /* Pink background */
+    color: #6a1b9a; /* Dark purple/pink text */
+}
+
+.content-box {
+    border-color: #ffb3e6;
+}
+
+h1 {
+    color: #c2185b;
+}
+
+p {
+    color: #880e4f;
+}
+
+.theme-button {
+    background-color: #ffcdd2;
+    color: #c2185b;
+    border-color: #f48fb1;
+}
+
+.theme-button:hover {
+    background-color: #f8bbd0;
+}
+
+/* Add more pink mode specific overrides here */

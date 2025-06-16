@@ -1,0 +1,46 @@
+body {
+    font-family: sans-serif;
+    margin: 20px;
+    background-color: #ffffff; /* Default light background */
+    color: #000000; /* Default dark text */
+    transition: background-color 0.3s ease, color 0.3s ease; /* For smooth transitions */
+}
+
+.content-box {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+h1 {
+    color: #333;
+}
+
+p {
+    line-height: 1.6;
+}
+
+.theme-switcher {
+    margin-bottom: 20px;
+}
+
+.theme-button {
+    padding: 8px 15px;
+    margin-right: 10px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+.theme-button:hover {
+    background-color: #e0e0e0;
+}
+
+/* You can add more default styles here */
+.theme-button.active {
+    background-color: #bbb; /* Example active state color */
+    color: #fff;
+    border-color: #888;
+}

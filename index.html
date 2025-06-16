@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theme Switch Test</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dark-mode.css" title="dark">
+    <link rel="stylesheet" href="pink-mode.css" title="pink">
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 20px;
+            transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for body */
+        }
+
+        .theme-switcher {
+            margin-bottom: 20px;
+        }
+
+        .theme-button {
+            padding: 8px 15px;
+            margin-right: 10px;
+            cursor: pointer;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f0f0f0;
+            transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for buttons */
+        }
+
+        .theme-button:hover {
+            background-color: #e0e0e0;
+        }
+
+        .content-box {
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            transition: border-color 0.3s ease; /* Smooth transition for content box */
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div class="theme-switcher">
+            <button class="theme-button" onclick="setTheme('')" data-theme-option="light">Light</button>
+            <button class="theme-button" onclick="setTheme('pink')" data-theme-option="pink">Pink</button>
+            <button class="theme-button" onclick="setTheme('dark')" data-theme-option="dark">Dark Mode</button>
+        </div>
+    </section>
+
+    <div class="content-box">
+        <h1>Welcome!</h1>
+        <p>This is some sample content to test the theme switching functionality.</p>
+        <ul>
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+        </ul>
+    </div>
+
+    <script>
+        const body = document.body;
+        const themeSwitcherButtons = document.querySelectorAll('[data-theme-option]');
+        const themeStorageKey = 'selectedTheme';
+        const darkModeStorageKey = 'darkMode';
+
+        function setTheme(themeName) {
+            const links = document.querySelectorAll('link[title]');
+            links.forEach(link => {
+                link.disabled = link.title !== themeName;
+            });
+            body.classList.remove('dark-mode'); // Ensure dark mode class is removed when switching to light or pink
+            localStorage.setItem(themeStorageKey, themeName);
+            localStorage.removeItem(darkModeStorageKey); // Clear dark mode preference when explicitly setting a theme
+            updateButtonStates(themeName === '' ? 'light' : themeName);
+        }
+
+        function toggleDarkMode() {
+            body.classList.toggle('dark-mode');
+            const isDarkMode = body.classList.contains('dark-mode');
+            localStorage.setItem(darkModeStorageKey, isDarkMode);
+            localStorage.removeItem(themeStorageKey); // Clear specific theme preference when toggling dark mode
+            updateButtonStates(isDarkMode ? 'dark' : 'light');
+        }
+
+        function updateButtonStates(activeTheme) {
+            themeSwitcherButtons.forEach(button => {
+                button.classList.remove('active');
+                const themeOption = button.getAttribute('data-theme-option');
+                if ((activeTheme === 'light' && themeOption === 'light') ||
+                    (activeTheme === 'pink' && themeOption === 'pink') ||
+                    (activeTheme === 'dark' && themeOption === 'dark')) {
+                    button.classList.add('active');
+                }
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedTheme = localStorage.getItem(themeStorageKey);
+            const savedDarkMode = localStorage.getItem(darkModeStorageKey);
+
+            if (savedTheme) {
+                setTheme(savedTheme);
+            } else if (savedDarkMode === 'true') {
+                toggleDarkMode();
+            } else {
+                updateButtonStates('light'); // Default to light mode on first visit
+            }
+        });
+    </script>
+
+</body>
+</html>
